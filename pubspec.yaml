@@ -19,6 +19,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_svg: ^0.14.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -39,6 +40,25 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  assets:
+    - assets/svg/fuchouzhelianmeng-lieying.svg
+    - assets/svg/hanweizhelianmeng-yemoxia.svg
+    - assets/svg/qiyiboshi.svg
+    - assets/svg/yirenzu-heifuwang.svg
+    - assets/svg/wode.svg
+    - assets/svg/gouwuche.svg
+    - assets/svg/search.svg
+    - assets/svg/right.svg
+    - assets/svg/left.svg
+
+  fonts:
+    - family: Hero  #指定一个字体名
+      fonts:
+        - asset: fonts/iconfont.ttf
+    - family: Nav  #指定一个字体名
+      fonts:
+        - asset: fonts/nav.ttf
 
   # To add assets to your application, add an assets section, like this:
   # assets:
