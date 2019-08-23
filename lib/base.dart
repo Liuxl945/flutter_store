@@ -6,24 +6,26 @@ import 'package:flutter_store/path.dart' as Path;
 typedef Widget BuildFn(BuildContext ctx, Map params, NoRoute router);
 
 class BodyPage extends Page {
-
   BuildFn _build;
   bool noAnimate = true;
   String title;
   // DateTime _lastPressedAt;
 
+  static final routerPage = [
+    Path.Home,
+    Path.Subject,
+    Path.User,
+  ];
+
   bottomNavigationBar(ctx, path, NoRoute router){
     var _selectedIndex = -1;
-    switch(path){
-      case Path.Home:
-        _selectedIndex = 0;
-        break;
-      case Path.Subject:
-        _selectedIndex = 1;
-        break;
-      case Path.User:
-        _selectedIndex = 2;
-        break;
+
+    if(path == routerPage[0]){
+      _selectedIndex = 0;
+    }else if(path == routerPage[1]){
+      _selectedIndex = 1;
+    }else if(path == routerPage[2]){
+      _selectedIndex = 2;
     }
 
     if(_selectedIndex == -1) return null;
@@ -42,17 +44,8 @@ class BodyPage extends Page {
       fixedColor: Colors.deepOrange,
       onTap: (index){
         if(_selectedIndex == index)  return;
-        switch (index){
-          case 0:
-            router.to(ctx, Path.Home, {});
-            break;
-          case 1:
-            router.to(ctx, Path.Subject, {});
-            break;
-          case 2:
-            router.to(ctx, Path.User, {});
-            break;
-        }
+
+        router.to(ctx, routerPage[index], {});
       }
     );
   }
@@ -64,7 +57,7 @@ class BodyPage extends Page {
         pageBuilder: (ctx, _, __){
           return Scaffold(
               body: _build(ctx, params, router),
-              bottomNavigationBar: bottomNavigationBar(ctx, params["path"] ?? "/", router),
+              bottomNavigationBar: bottomNavigationBar(ctx, params["path"] ?? Path.InitialRoute, router),
 //              drawer: layout.drawer(ctx)
           );
         }
@@ -77,13 +70,13 @@ class BodyPage extends Page {
       return Scaffold(
         appBar: appBar,
         body: _build(ctx, params, router),
-        bottomNavigationBar: bottomNavigationBar(ctx, params["path"] ?? "/", router),
+        bottomNavigationBar: bottomNavigationBar(ctx, params["path"] ?? Path.InitialRoute, router),
 //        drawer: layout.drawer(ctx)
       );
     },
     );
   }
-
+  
   BodyPage.formBuild(BuildFn build, {this.noAnimate = true, this.title}) {
     _build = build;
   }

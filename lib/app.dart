@@ -1,4 +1,6 @@
+
 import 'package:flutter/material.dart';
+import 'package:flutter_store/pages/category.dart';
 import 'package:flutter_store/pages/home.dart';
 import 'package:flutter_store/pages/subject.dart';
 import 'package:flutter_store/pages/user.dart';
@@ -30,14 +32,19 @@ class DemoApp extends StatelessWidget {
     route.add(Path.Home, homePage());
     route.add(Path.User, userPage());
     route.add(Path.Subject, subjectPage());
+    route.add(Path.Category, categoryPage());
   }
-
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'App',
-      initialRoute: '/',
+      theme:ThemeData(
+        primaryColor: Colors.deepOrange,
+        dividerColor: Colors.deepOrange,
+        // scaffoldBackgroundColor: Colors.white,
+      ),
+      initialRoute: Path.InitialRoute,
       onGenerateRoute: router,
     );
   }
