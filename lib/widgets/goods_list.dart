@@ -45,7 +45,7 @@ class GoodList extends StatelessWidget {
     return List.generate(goods.length, (i){
       var item = goods[i];
       return GoodBox(item['name'], item['imgUrl'], routerCallback: (){
-        route.to(ctx, Path.User, {"name": item['name']});
+        route.to(ctx, Path.Detail, {"name": item['name']});
       });
     });
   }

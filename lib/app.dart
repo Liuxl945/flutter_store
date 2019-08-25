@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_store/pages/category.dart';
+import 'package:flutter_store/pages/detail.dart';
 import 'package:flutter_store/pages/home.dart';
 import 'package:flutter_store/pages/search.dart';
 import 'package:flutter_store/pages/shop_cart.dart';
@@ -37,6 +38,7 @@ class DemoApp extends StatelessWidget {
     route.add(Path.Category, categoryPage());
     route.add(Path.ShopCart, shopCartPage());
     route.add(Path.Search, searchPage());
+    route.add(Path.Detail, detailPage());
   }
 
   @override
