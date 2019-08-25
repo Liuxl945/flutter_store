@@ -7,4 +7,4 @@ const Category = '/category';
 const Detail = '/detail';
 const Photo = '/photo';
 
-const InitialRoute = Detail;
+const InitialRoute = Home;
