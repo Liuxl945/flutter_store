@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_store/pages/category.dart';
 import 'package:flutter_store/pages/home.dart';
+import 'package:flutter_store/pages/search.dart';
+import 'package:flutter_store/pages/shop_cart.dart';
 import 'package:flutter_store/pages/subject.dart';
 import 'package:flutter_store/pages/user.dart';
 import 'package:flutter_store/router.dart';
@@ -33,6 +35,8 @@ class DemoApp extends StatelessWidget {
     route.add(Path.User, userPage());
     route.add(Path.Subject, subjectPage());
     route.add(Path.Category, categoryPage());
+    route.add(Path.ShopCart, shopCartPage());
+    route.add(Path.Search, searchPage());
   }
 
   @override

@@ -6,8 +6,6 @@ import 'package:transparent_image/transparent_image.dart';
 
 
 class _Subject extends StatefulWidget {
-  _Subject({Key key}) : super(key: key);
-
   __SubjectState createState() => __SubjectState();
 }
 

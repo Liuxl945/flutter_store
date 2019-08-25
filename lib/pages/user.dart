@@ -4,26 +4,31 @@ import 'package:flutter_store/widgets/card.dart';
 import 'package:flutter_store/widgets/title.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-
-
 final userPage = () => BodyPage.formBuild((ctx, params, router) {
-
   var SelectItem = (String text, String path){
     return GestureDetector(
       onTap: () => router.to(ctx, path, params),
       child: Container(
-        padding: EdgeInsets.all(5),
-        margin: EdgeInsets.symmetric(vertical: 5),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.center,
+        // margin: EdgeInsets.symmetric(vertical: 5),
+        child:Column(
+          mainAxisAlignment:MainAxisAlignment.end,
           children: <Widget>[
-            Expanded(
-              child: Text(text,textScaleFactor:1.1),
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 17),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Expanded(
+                    child: Text(text,textScaleFactor:1.1),
+                  ),
+                  SvgPicture.asset("assets/svg/right.svg", height: 16)
+                ],
+              ),
             ),
-            SvgPicture.asset("assets/svg/right.svg", height: 16)
+            Divider(height: 1,color:Color.fromRGBO(220, 220, 220, 1)),
           ],
-        ),
+        )
       ),
     );
   };
@@ -48,6 +53,7 @@ final userPage = () => BodyPage.formBuild((ctx, params, router) {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text('花钱买罪',textScaleFactor:1.4),
+                SizedBox(height: 10),
                 Text('独家视频丨习近平到空军某基地视察：确保一旦有事能上得去、打得赢',textScaleFactor:1.2,overflow: TextOverflow.ellipsis,maxLines: 2),
               ],
             ),
