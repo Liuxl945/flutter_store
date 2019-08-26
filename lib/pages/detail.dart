@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_inappbrowser/flutter_inappbrowser.dart';
 import 'package:flutter_store/base.dart';
+import 'package:flutter_store/widgets/overlayer.dart';
 import 'package:flutter_store/widgets/tab.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
@@ -221,6 +222,8 @@ var detailPage = () => BodyPage.formBuild((ctx, params, router){
     );
   };
 
+
+
   Widget bottomNav = Positioned(
     bottom: MediaQuery.of(ctx).padding.bottom,
     left: 0,
@@ -258,7 +261,11 @@ var detailPage = () => BodyPage.formBuild((ctx, params, router){
             );
           }),
           bottomButton("购买", Colors.red,(){
-            
+            showDialog(
+              context: ctx,
+              builder: (context) {
+                return OverLayer();
+            });
           }),
         ],
       ),

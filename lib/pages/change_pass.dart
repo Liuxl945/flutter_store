@@ -27,7 +27,8 @@ final changePassPage = () => BodyPage.formBuild((ctx, params, router) {
 
   var field = (String label, FormFieldValidator<String> validator, String fieldName, [TextEditingController ctl]){
     return Container(
-      margin: EdgeInsets.only(bottom: 20),
+      height: 44,
+      margin: EdgeInsets.only(bottom: 10),
       child: TextFormField(
         cursorColor: Colors.deepOrange,
         controller: ctl != null ? ctl : null,
@@ -56,26 +57,30 @@ final changePassPage = () => BodyPage.formBuild((ctx, params, router) {
   }
 
   return SafeArea(
-    child: Container(
-      padding: EdgeInsets.all(10),
-      child: Form(
-        key: formKey,
-        child: Column(
-          children: <Widget>[
-            iosNavBar(ctx),
-            Container(
-              margin: EdgeInsets.symmetric(vertical: 15),
-              child: Text("修改密码", textScaleFactor: 1.4),
-            ),
-            field("旧密码", validator, "old_pass"),
-            // field("新密码", validator, "pass", _ctl),
-            // field("确认密码", validatorComfirm, "comfirm_pass"),
-            FlatButton(
-              color: Colors.deepOrange,
-              child: Text("提交", style: TextStyle(color: Colors.white)),
-              onPressed: () => forSubmitted(),
-            )
-          ],
+    child: SingleChildScrollView(
+      child: Container(
+        padding: EdgeInsets.all(10),
+        child: Form(
+          autovalidate: false,
+
+          key: formKey,
+          child: Column(
+            children: <Widget>[
+              iosNavBar(ctx),
+              Container(
+                margin: EdgeInsets.symmetric(vertical: 15),
+                child: Text("修改密码", textScaleFactor: 1.4),
+              ),
+              field("旧密码", validator, "old_pass"),
+              field("新密码", validator, "pass", _ctl),
+              field("确认密码", validatorComfirm, "comfirm_pass"),
+              FlatButton(
+                color: Colors.deepOrange,
+                child: Text("提交", style: TextStyle(color: Colors.white)),
+                onPressed: () => forSubmitted(),
+              )
+            ],
+          ),
         ),
       ),
     ),

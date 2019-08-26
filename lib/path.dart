@@ -10,4 +10,4 @@ const Coupon = '/coupon';
 const ChangePass = '/change_pass';
 const SubjectDetail = '/subject_detail';
 
-const InitialRoute = ChangePass;
+const InitialRoute = Detail;
