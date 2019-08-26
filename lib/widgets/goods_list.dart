@@ -14,9 +14,9 @@ final goods = [
 
 
 class GoodBox extends StatelessWidget{
-  String name;
-  String imgUrl;
-  VoidCallback routerCallback;
+  final String name;
+  final String imgUrl;
+  final VoidCallback routerCallback;
   GoodBox(this.name, this.imgUrl, {this.routerCallback});
   @override
   Widget build(BuildContext context) {

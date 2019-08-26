@@ -8,7 +8,7 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:flutter_store/path.dart' as Path;
-import 'package:webview_flutter/webview_flutter.dart';
+// import 'package:webview_flutter/webview_flutter.dart';
 
 
 class AppPaginationBuilder extends SwiperPlugin {
@@ -80,7 +80,7 @@ class AppPaginationBuilder extends SwiperPlugin {
 }
 
 
-var detailPage = () => BodyPage.formBuild((ctx, param, router){
+var detailPage = () => BodyPage.formBuild((ctx, params, router){
   final List photo = [
     "https://img01.hua.com/uploadpic/newpic/9010011.jpg_220x240.jpg",
     "https://img01.hua.com/uploadpic/newpic/9012345.jpg_220x240.jpg",

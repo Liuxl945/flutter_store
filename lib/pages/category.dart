@@ -5,7 +5,7 @@ import 'package:flutter_store/widgets/goods_list.dart';
 import 'package:flutter_store/widgets/home_banners.dart';
 import 'package:flutter_store/widgets/title.dart';
 
-var categoryPage = () => BodyPage.formBuild((ctx, param, router){
+var categoryPage = () => BodyPage.formBuild((ctx, params, router){
   VoidCallback toShopCart = () => router.to(ctx, Path.ShopCart, {});
   VoidCallback toSearch = () => router.to(ctx, Path.Search, {});
   VoidCallback toUser = () => router.to(ctx, Path.User, {});
@@ -18,7 +18,7 @@ var categoryPage = () => BodyPage.formBuild((ctx, param, router){
             children: <Widget>[
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
-                child: ATitle('爱情鲜花'),
+                child: aTitle('爱情鲜花'),
               ),
               GoodList(),
             ],

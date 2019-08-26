@@ -3,9 +3,10 @@ import 'package:flutter_store/base.dart';
 import 'package:flutter_store/widgets/card.dart';
 import 'package:flutter_store/widgets/title.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_store/path.dart' as Path;
 
 final userPage = () => BodyPage.formBuild((ctx, params, router) {
-  var SelectItem = (String text, String path){
+  var selectItem = (String text, String path){
     return GestureDetector(
       onTap: () => router.to(ctx, path, params),
       child: Container(
@@ -33,8 +34,9 @@ final userPage = () => BodyPage.formBuild((ctx, params, router) {
     );
   };
 
-  var UserAvatar = CardBox(
+  Widget userAvatar = CardBox(
     height: 120,
+    margin: 0,
     child: Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
@@ -69,13 +71,13 @@ final userPage = () => BodyPage.formBuild((ctx, params, router) {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          ATitle("个人中心"),
-          UserAvatar,
+          aTitle("个人中心"),
+          userAvatar,
           SizedBox(height: 10),
-          SelectItem("购物车", "/shop_cart"),
-          SelectItem("优惠券", "/coupon"),
-          SelectItem("修改密码", "/change_pass"),
-          SelectItem("退出", "/exit"),
+          selectItem("购物车", Path.ShopCart),
+          selectItem("优惠券", Path.Coupon),
+          selectItem("修改密码", Path.ChangePass),
+          selectItem("退出", "/exit"),
         ],
       ),
     ),

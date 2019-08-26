@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_store/base.dart';
+import 'package:flutter_store/router.dart';
 import 'package:flutter_store/widgets/card.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:transparent_image/transparent_image.dart';
+import 'package:flutter_store/path.dart' as Path;
 
 
 class _Subject extends StatefulWidget {
@@ -34,6 +36,9 @@ class __SubjectState extends State<_Subject> {
         Map subject = subjects[index];
 
         return GestureDetector(
+          onTap: (){
+            route.to(context, Path.SubjectDetail, {});
+          },
           child: Container(
             margin: EdgeInsets.fromLTRB(10,10,10,0),
             padding: EdgeInsets.all(10),

@@ -7,9 +7,9 @@ final String searchIcon = 'assets/svg/search.svg';
 
 
 class Banners extends StatelessWidget {
-  VoidCallback toShopCart;
-  VoidCallback toSearch;
-  VoidCallback toUser;
+  final VoidCallback toShopCart;
+  final VoidCallback toSearch;
+  final VoidCallback toUser;
 
   Banners(this.toShopCart, this.toSearch, this.toUser);
 

@@ -1,11 +1,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_store/pages/category.dart';
+import 'package:flutter_store/pages/change_pass.dart';
+import 'package:flutter_store/pages/coupon.dart';
 import 'package:flutter_store/pages/detail.dart';
 import 'package:flutter_store/pages/home.dart';
+import 'package:flutter_store/pages/photo.dart';
 import 'package:flutter_store/pages/search.dart';
 import 'package:flutter_store/pages/shop_cart.dart';
 import 'package:flutter_store/pages/subject.dart';
+import 'package:flutter_store/pages/subject_detail.dart';
 import 'package:flutter_store/pages/user.dart';
 import 'package:flutter_store/router.dart';
 import 'package:flutter_store/path.dart' as Path;
@@ -39,6 +43,10 @@ class DemoApp extends StatelessWidget {
     route.add(Path.ShopCart, shopCartPage());
     route.add(Path.Search, searchPage());
     route.add(Path.Detail, detailPage());
+    route.add(Path.Photo, phonePage());
+    route.add(Path.Coupon, couponPage());
+    route.add(Path.ChangePass, changePassPage());
+    route.add(Path.SubjectDetail, SubjectDetailPage());
   }
 
   @override

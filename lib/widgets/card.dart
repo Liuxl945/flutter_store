@@ -15,14 +15,15 @@ const boxDecoration = BoxDecoration(
 
 
 class CardBox extends StatelessWidget {
-  Widget child;
-  double height;
-  CardBox({this.child, this.height = 120});
+  final Widget child;
+  final double height;
+  final double margin;
+  CardBox({this.child, this.height = 120,this.margin = 10});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.all(5),
+        margin: EdgeInsets.symmetric(horizontal: margin),
         height: height,
         decoration: boxDecoration,
         child: child

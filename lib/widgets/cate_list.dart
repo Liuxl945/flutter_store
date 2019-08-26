@@ -21,7 +21,7 @@ typedef void CategoryClick(String index);
 
 
 class CategoryList extends StatelessWidget {
-  CategoryClick handler;
+  final CategoryClick handler;
 
   CategoryList({this.handler});
 

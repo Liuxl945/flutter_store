@@ -6,5 +6,8 @@ const Search = '/search';
 const Category = '/category';
 const Detail = '/detail';
 const Photo = '/photo';
+const Coupon = '/coupon';
+const ChangePass = '/change_pass';
+const SubjectDetail = '/subject_detail';
 
-const InitialRoute = Home;
+const InitialRoute = ChangePass;

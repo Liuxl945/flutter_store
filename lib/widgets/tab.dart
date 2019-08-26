@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class ATab extends StatefulWidget {
-  num initSelectIndex=0;
-  void Function(num i) onTabSelected;
-  List<Widget> childrens;
-  List<String> tabs;
+  
+  final num initSelectIndex;
+  final void Function(num i) onTabSelected;
+  final List<Widget> childrens;
+  final List<String> tabs;
 
   ATab({
     this.initSelectIndex = 0,
