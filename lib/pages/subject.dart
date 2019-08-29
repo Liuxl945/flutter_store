@@ -20,6 +20,12 @@ class __SubjectState extends State<_Subject> {
     refreshController = RefreshController();
   }
 
+  @override
+  void dispose() { 
+    refreshController.dispose();
+    super.dispose();
+  }
+
   static List subjects = [
     {'id': 1,'name': '劳动节','imgUrl': 'https://st-gdx.dancf.com/gaodingx/8/design/20190416-104501-cd9f.png?x-oss-process=image/resize,w_760/interlace,1'},
     {'id': 2,'name': '旅行','imgUrl': 'https://st-gdx.dancf.com/templets/80488/shots/20190219-150002-8-219.png?x-oss-process=image/resize,w_760/interlace,1'},
